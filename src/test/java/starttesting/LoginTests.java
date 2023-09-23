@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import java.util.concurrent.TimeUnit;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,7 +20,9 @@ public class LoginTests {
         driver = new ChromeDriver();
         driver.navigate().to("https://ilcarro.web.app/search");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+
+
     }
 
 @Test
@@ -34,20 +37,20 @@ public void loginPositive(){
 //    */
 
 
-    WebElement btnLogin = driver.findElement(By.xpath(""));
+    WebElement btnLogin = driver.findElement(By.xpath("//a[contains(@href, '/login')]"));
     btnLogin.click();
 
-    WebElement inputEmail = driver.findElement(By.xpath(""));
+    WebElement inputEmail = driver.findElement(By.xpath("//input[@id='email']"));
     inputEmail.click();
     inputEmail.clear();
     inputEmail.sendKeys("qwer1@hh.e");
 
-    WebElement inputPassword = driver.findElement(By.xpath(""));
+    WebElement inputPassword = driver.findElement(By.xpath("//input[@id='password']"));
     inputPassword.click();
     inputPassword.clear();
     inputPassword.sendKeys("User#12345");
 
-    WebElement btnYalla = driver.findElement(By.xpath(""));
+    WebElement btnYalla = driver.findElement(By.xpath("//button[@type='submit']"));
     btnYalla.click();
 
     WebElement textMessagePopUpH2 = driver.findElement(By.xpath("//h2[@class='message']"));
