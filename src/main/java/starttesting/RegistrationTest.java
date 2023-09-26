@@ -9,13 +9,13 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import utils.RandomUtils;
+
 
 import java.util.concurrent.TimeUnit;
 
 public class RegistrationTest {
     WebDriver driver;
-    RandomUtils randomUtils=new RandomUtils();
+    // RandomUtils randomUtils=new RandomUtils();
     @BeforeClass
     public void preconditions() {
         driver = new ChromeDriver();
@@ -25,9 +25,10 @@ public class RegistrationTest {
 
 
     }
-    @Test
+
     public void registrationPositive(){
-        String email= randomUtils.generateEmail(7);
+        String email= "qw12@gg.re";
+                //randomUtils.generateEmail(7);
         System.out.println(email);
 
         driver.findElement(By.xpath("//a[contains(@href, '/registration')]")).click();

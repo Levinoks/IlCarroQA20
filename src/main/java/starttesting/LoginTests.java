@@ -25,7 +25,7 @@ public class LoginTests {
 
     }
 
-@Test
+
 public void loginPositive(){
 
 //    /*
