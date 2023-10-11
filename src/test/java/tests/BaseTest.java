@@ -3,9 +3,12 @@ package tests;
 import manager.ApplicationManager;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import utils.RandomUtils;
 
 public class BaseTest {
+
     static ApplicationManager app = new ApplicationManager();
+    RandomUtils random = new RandomUtils();
 
     @BeforeSuite
     public void setUp(){
