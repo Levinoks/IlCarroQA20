@@ -12,4 +12,10 @@ public class RegistrationTests extends BaseTest{
         app.getUserHelper().fillRegistrationForm(user);
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterRegistration());
     }
+
+    @Test
+    public void negativeRegistration(){
+
+    }
+
 }
