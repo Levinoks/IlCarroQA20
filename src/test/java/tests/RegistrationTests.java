@@ -45,7 +45,7 @@ public class RegistrationTests extends BaseTest {
         UserDTOLombok user = UserDTOLombok.builder().email("").password("ser12345").lastName("Asdfqe").name("test").build();
         app.getUserHelper().fillNegativeRegistrationForm(user);
         Assert.assertTrue(app.getUserHelper().validateErrorEmptyEmail());
-
+//kkhf
     }
 
 }
