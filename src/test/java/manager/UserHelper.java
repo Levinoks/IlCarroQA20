@@ -104,19 +104,7 @@ public class UserHelper extends BaseHelper {
 
     public void clickOkSuccessLogin() {
         clickBase(btnOkPopUp);
-        //typeTextBase(textSuccessfulLoginPopUp, String.valueOf(Keys.ESCAPE) );
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-        //jsClickBase(btnOkPopUpStr);
-      //  clickByXY(btnOkPopUp, 2, 2);
-//        Actions act = new Actions(driver);
-//        act.sendKeys(Keys.F5).perform();
-        // Keyboard keyboard = ((HasInputDevices) driver).getKeyboard();
-// Enter a key
-        //keyboard.pressKey(Keys.ENTER);
+
     }
 
     public boolean validatePopUpMessageLoginIncorrect() {
