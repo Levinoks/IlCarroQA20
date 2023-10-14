@@ -23,6 +23,10 @@ public class BaseHelper {
         return driver.findElements(locator);
     }
 
+    public boolean isElementExist(By locator){
+        return findElementsBase(locator).size()>0;
+    }
+
     public void clickBase(By locator) {
         WebElement el = findElementBase(locator);
         el.click();
@@ -52,20 +56,33 @@ public class BaseHelper {
         }
 
     }
+    public void pause(int second) {
+        try {
+            Thread.sleep(second * 1000L);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 
     public void jsClickBase(String locator){
         JavascriptExecutor js = (JavascriptExecutor) driver ;
         js.executeScript(locator);
+        System.out.println(locator);
     }
 
 
-    public void clickByXY(By locator, int down, int right){
-        Rectangle rectangle = findElementBase(locator).getRect();
-        int x = rectangle.getX()+(rectangle.getWidth()/right);
-        int y =  rectangle.getY()+ (rectangle.getHeight()/down);
+    public void clickByXY(By locator, double down, int right){
+        Rectangle rect = findElementBase(locator).getRect();
+        int x = rect.getX() + (rect.getWidth() / right);
+        double y = (int) rect.getY() + (rect.getHeight() / down);
         Actions actions = new Actions(driver);
-        actions.moveByOffset(x,y).click().perform();
+        actions.moveByOffset(x, (int) y).click().perform();
         }
+
+    public void refresh(){
+       driver.navigate().refresh();
+    }
 
 
 }
